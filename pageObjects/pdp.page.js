@@ -21,7 +21,7 @@ module.exports = class PDP {
     async awaitFullyLoaded() {
         console.log("PDP: Waiting for page to fully load")
         await testController
-            .expect(this.addToBagButton.exists)
+            .expect(await this.addToBagButton())
             .ok(this.pageLoadErrorMsg)
         // Use to verify that the loading mechanism actually works
         // await testController

@@ -35,7 +35,7 @@ function runTest(iteration) {
                 .browsers("chrome")
                 .screenshots("./reports/screenshots/")
 
-                .run({skipJsErrors: true})
+                .run({skipJsErrors: true, selectorTimeout: 40000})
                 .catch(function(error) {
                     console.log(error)
                 })

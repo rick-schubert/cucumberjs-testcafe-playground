@@ -4,14 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": ".\\node_modules\\.bin\\cucumber-js.cmd"
+    "test": "./node_modules/cucumber/bin/cucumber-js --format json:report/cucumber_report.json -f node_modules/cucumber-pretty",
+    "posttest": "node reporter.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "base64-img": "^1.0.4",
     "cucumber": "^4.0.0",
+    "cucumber-caffeinator": "^1.1.4",
+    "cucumber-pretty": "^1.4.0",
     "testcafe": "^0.18.6",
     "uuid-random": "^1.0.6"
+  },
+  "devDependencies": {
+    "cucumber-html-reporter": "^4.0.1"
   }
 }

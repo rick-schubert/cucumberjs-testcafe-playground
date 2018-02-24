@@ -11,8 +11,13 @@ Feature: Checkout Smoke Tests - New User Purchase Journeys
         And I proceed to checkout from the "minibag"
         And I register "during checkout"
         And I choose "Home Express" as the delivery option
-# And I enter my "US" delivery address using the "manual entry" functionality
-# And I choose my billing address to match my delivery address
-# And I enter my "amex" payment details
-# And I place the order as a "new" user
-# Then I see the confirmation for my order
+        And I enter my delivery address
+            | Country        | Entry Method |
+            | United States  | manual       |
+        And I proceed to payment
+        And I enter my credit card details
+            | Card Number     | CVV  | Expiry Month | Expiry Year |
+            | 378282246310005 | 1234 | 12           | 2021        |
+        And I accept the terms and conditions
+        And I place the order
+        Then I see the confirmation for my order

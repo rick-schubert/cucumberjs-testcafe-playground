@@ -1,0 +1,283 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Checkout Smoke Tests - New User Purchase Journeys",
+    "line": 1,
+    "id": "checkout-smoke-tests---new-user-purchase-journeys",
+    "tags": [],
+    "uri": "features/newUserJourney.feature",
+    "elements": [
+      {
+        "id": "checkout-smoke-tests---new-user-purchase-journeys;user-registers-and-makes-a-purchase",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "User registers and makes a purchase",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "features/support/hooks.js:52"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6659000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Brand",
+                      "Country",
+                      "Page"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Topshop",
+                      "US",
+                      "Home"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I am on a page",
+            "match": {
+              "location": "features/support/stepdefinitions.js:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16311000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "I search for a product code",
+            "match": {
+              "location": "features/support/stepdefinitions.js:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13210000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I add the product to the bag",
+            "match": {
+              "location": "features/support/stepdefinitions.js:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3270000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I dismiss the add to bag confirmation modal",
+            "match": {
+              "location": "features/support/stepdefinitions.js:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3588000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "I view the bag",
+            "match": {
+              "location": "features/support/stepdefinitions.js:36"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 515000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "I proceed to checkout from the \"minibag\"",
+            "match": {
+              "location": "features/support/stepdefinitions.js:41"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3927000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "I register \"during checkout\"",
+            "match": {
+              "location": "features/support/stepdefinitions.js:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17210000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I choose \"Home Express\" as the delivery option",
+            "match": {
+              "location": "features/support/stepdefinitions.js:53"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3316000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Country",
+                      "Entry Method"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "United States",
+                      "manual"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "And ",
+            "line": 14,
+            "name": "I enter my delivery address",
+            "match": {
+              "location": "features/support/stepdefinitions.js:60"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10593000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "I proceed to payment",
+            "match": {
+              "location": "features/support/stepdefinitions.js:68"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 790000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Card Number",
+                      "CVV",
+                      "Expiry Month",
+                      "Expiry Year"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "378282246310005",
+                      "1234",
+                      "12",
+                      "2021"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "And ",
+            "line": 18,
+            "name": "I enter my credit card details",
+            "match": {
+              "location": "features/support/stepdefinitions.js:73"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2041000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "I accept the terms and conditions",
+            "match": {
+              "location": "features/support/stepdefinitions.js:79"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 254000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "I place the order",
+            "match": {
+              "location": "features/support/stepdefinitions.js:84"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3208000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 23,
+            "name": "I see the confirmation for my order",
+            "match": {
+              "location": "features/support/stepdefinitions.js:89"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 25488000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "features/support/hooks.js:59"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

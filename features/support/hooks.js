@@ -11,7 +11,7 @@ var {
 } = require("cucumber")
 
 var testcafe = null
-var TIMEOUT = 40000
+var TIMEOUT = 60000
 var n = 0
 
 function createTestFile() {
@@ -33,9 +33,8 @@ function runTest(iteration) {
             return runner
                 .src("./test.js")
                 .browsers("chrome")
-                .screenshots("./reports/screenshots/")
-
-                .run({skipJsErrors: true, selectorTimeout: 40000})
+                .screenshots("./../../screenshots")
+                .run({skipJsErrors: true, selectorTimeout: 60000})
                 .catch(function(error) {
                     console.log(error)
                 })
@@ -59,6 +58,7 @@ Before(function() {
 
 After(function() {
     fs.unlinkSync("test.js")
+    testController.takeScreenshot()
     testControllerHolder.free()
     testcafe.close()
 })

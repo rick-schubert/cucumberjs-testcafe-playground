@@ -2,6 +2,10 @@ const browser = require("./../clienthelpers")
 const {Selector} = require("testcafe")
 
 module.exports = class PDP {
+    constructor() {
+        this.pageLoadErrorMsg = "The PDP either didn't fully load or it couldn't navigate to it."
+    }
+
     get addToBagButton() {
         return Selector(".AddToBag").with({boundTestRun: testController})
     }
@@ -14,12 +18,7 @@ module.exports = class PDP {
         return Selector(".Modal-closeIcon").with({boundTestRun: testController})
     }
 
-    get pageLoadErrorMsg() {
-        return "The PDP either didn't fully load or it couldn't navigate to it."
-    }
-
     async awaitFullyLoaded() {
-        console.log("PDP: Waiting for page to fully load")
         await testController
             .expect(await this.addToBagButton())
             .ok(this.pageLoadErrorMsg)

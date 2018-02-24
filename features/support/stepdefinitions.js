@@ -6,6 +6,8 @@ const PDP = require("./../../pageObjects/pdp.page")
 const MiniBag = require("./../../pageObjects/minibag.page")
 const SignIn = require("./../../pageObjects/signin.page")
 const DeliveryPage = require("./../../pageObjects/delivery.page")
+const PaymentPage = require("./../../pageObjects/payment.page")
+const ThankYouPage = require("./../../pageObjects/thankyou.page")
 
 Given("I am on a page", async (table) => {
     await testController.navigateTo("http://local.m.us.topshop.com:8080")
@@ -14,7 +16,6 @@ Given("I am on a page", async (table) => {
         document.cookie="featuresOverride={\"FEATURE_NEW_CHECKOUT\":true}"
         location.reload()
     }).with({boundTestRun: testController})()
-    console.log(table.hashes())
 })
 
 When("I search for a product code", async () => {
@@ -54,4 +55,38 @@ When("I choose {string} as the delivery option", async (deliveryOption) => {
     if (deliveryOption === "Home Express") {
         await deliverypage.chooseHomeExpress()
     }
+})
+
+When("I enter my delivery address", async (table) => {
+    const stepOptions = table.hashes()[0]
+    const deliverypage = new DeliveryPage()
+    if (stepOptions["Entry Method"] === "manual") {
+        await deliverypage.provideDeliveryDetailsManually(stepOptions.Country)
+    }
+})
+
+When("I proceed to payment", async () => {
+    const deliverypage = new DeliveryPage()
+    await deliverypage.proceedToPayment()
+})
+
+When("I enter my credit card details", async (table) => {
+    const stepOptions = table.hashes()[0]
+    const paymentpage = new PaymentPage()
+    await paymentpage.enterCreditCardDetails(stepOptions)
+})
+
+When("I accept the terms and conditions", async () => {
+    const paymentpage = new PaymentPage()
+    await paymentpage.acceptTermsAndConditions()
+})
+
+When("I place the order", async () => {
+    const paymentpage = new PaymentPage()
+    await paymentpage.placeOrder()
+})
+
+Then("I see the confirmation for my order", async () => {
+    const thankyoupage = new ThankYouPage()
+    await thankyoupage.awaitFullyLoaded()
 })

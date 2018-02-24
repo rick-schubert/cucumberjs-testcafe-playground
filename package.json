@@ -1,0 +1,16 @@
+{
+  "name": "cucumberjs-tryout",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": ".\\node_modules\\.bin\\cucumber-js.cmd"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "base64-img": "^1.0.4",
+    "cucumber": "^4.0.0",
+    "testcafe": "^0.18.6"
+  }
+}

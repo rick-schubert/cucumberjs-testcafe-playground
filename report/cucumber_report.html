@@ -275,7 +275,7 @@ pre {
 
     <div class="container">
 
-      <div class="generated-on">Sun Feb 25 2018 11:02:53 GMT+0000 (GMT)</div>
+      <div class="generated-on">Sun Feb 25 2018 17:07:56 GMT+0000 (GMT)</div>
 
       <div class="row">
         <div class="chart col-lg-6 col-md-6" id="piechart_features"></div>
@@ -327,10 +327,10 @@ pre {
                                         </div>
                                         <div>
                             <span class="label-container">
-                              <span class="label label-success" title="3 Steps Passed">3</span>
+                              <span class="label label-success" title="2 Steps Passed">2</span>
                               
                               
-                              <span class="label label-warning" title="10 Steps Skipped">10</span>
+                              <span class="label label-warning" title="11 Steps Skipped">11</span>
                               <span class="label label-danger" title="1 Steps Failed">1</span>
                               
                             </span>
@@ -358,7 +358,7 @@ pre {
                           <span> I am on a page</span>
                           
                               <span class="step-duration">
-                               15s 654ms
+                               8s 929ms
                               </span>
                             
                          
@@ -436,41 +436,7 @@ pre {
                           <span> I search for a product code</span>
                           
                               <span class="step-duration">
-                               8s 105ms
-                              </span>
-                            
-                         
-                            
-                          
-                      </span>
-                                    
-                                    
-
-                                    
-
-                                    
-
-                                    
-
-                                    
-                            	</div>
-                            </p>
-                            
-                            
-                                
-                                <p class="scenario-container">
-                                <div class="row steps">
-                                    
-                                    
-                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
-                                    
-                                    
-                                    <span class="text">
-                        <span class="keyword highlight">And </span>
-                          <span> I add the product to the bag</span>
-                          
-                              <span class="step-duration">
-                               3s 292ms
+                               7s 460ms
                               </span>
                             
                          
@@ -501,10 +467,10 @@ pre {
                                     
                                     <span class="text">
                         <span class="keyword highlight">And </span>
-                          <span> I dismiss the add to bag confirmation modal</span>
+                          <span> I add the product to the bag</span>
                           
                               <span class="step-duration">
-                               7ms
+                               10s 70ms
                               </span>
                             
                          
@@ -515,15 +481,15 @@ pre {
                                     
 
                                     
-                                    <a href="#error0_04" data-toggle="collapse">+ Show Error</a>
-                                    <div id="error0_04" class="collapse">
+                                    <a href="#error0_03" data-toggle="collapse">+ Show Error</a>
+                                    <div id="error0_03" class="collapse">
                                         <pre class=info>Error: ExternalAssertionLibraryError {
   type: 'externalAssertionLibraryError',
   isTestCafeError: true,
   callsite: 
    CallsiteRecord {
      filename: '/Users/schuber/Documents/github/cucumberjs-testcafe-playground/pageObjects/base.page.js',
-     lineNum: 20,
+     lineNum: 19,
      callsiteFrameIdx: 6,
      stackFrames: 
       [ [Object],
@@ -533,9 +499,12 @@ pre {
         [Object],
         [Object],
         [Object],
+        CallSite {},
+        [Object],
+        [Object],
         CallSite {} ],
      isV8Frames: true },
-  errMsg: 'AssertionError: PDP: Couldn\'t be fully loaded. Couldn\'t find function __$$clientFunction$$() {\n            var testRun = builder.getBoundTestRun() || _testRunTracker2.default.resolveContextTestRun();\n            var callsite = (0, _getCallsite.getCallsiteForMethod)(builder.callsiteNames.execution);\n            var args = [];\n\n            // OPTIMIZATION: don\'t leak `arguments` object.\n            for (var i = 0; i ( arguments.length; i++) {\n                args.push(arguments[i]);\n            }return builder._executeCommand(args, testRun, callsite);\n        }: expected false to be truthy' }
+  errMsg: 'AssertionError: PDP didn\'t fully load. Check the error output.}: expected false to be truthy' }
     at Function.(anonymous) (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/cucumber/src/user_code_runner.js:74:17)
     at Generator.throw ((anonymous))
     at Generator.tryCatcher (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/util.js:16:23)
@@ -550,6 +519,40 @@ pre {
     at tryOnImmediate (timers.js:751:5)
     at processImmediate [as _immediateCallback] (timers.js:722:5)</pre>
                                     </div>
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> I dismiss the add to bag confirmation modal</span>
+                          
+                              <span class="step-duration">
+                               0s
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
                                     
 
                                     
@@ -990,6 +993,75 @@ pre {
                             
                             
                                 
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-danger" title="Failed"><i class="glyphicon glyphicon-remove"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">After</span>
+                          <span> </span>
+                          
+                              <span class="step-duration">
+                               4ms
+                              </span>
+                            
+                         
+                      </span>
+                                    
+                                    
+
+                                    
+                                    <a href="#error0_015" data-toggle="collapse">+ Show Error</a>
+                                    <div id="error0_015" class="collapse">
+                                        <pre class=info>Error: ExternalAssertionLibraryError {
+  type: 'externalAssertionLibraryError',
+  isTestCafeError: true,
+  callsite: 
+   CallsiteRecord {
+     filename: '/Users/schuber/Documents/github/cucumberjs-testcafe-playground/pageObjects/base.page.js',
+     lineNum: 19,
+     callsiteFrameIdx: 6,
+     stackFrames: 
+      [ [Object],
+        [Object],
+        [Object],
+        [Object],
+        [Object],
+        [Object],
+        [Object],
+        CallSite {},
+        [Object],
+        [Object],
+        CallSite {} ],
+     isV8Frames: true },
+  errMsg: 'AssertionError: PDP didn\'t fully load. Check the error output.}: expected false to be truthy' }
+    at Function.(anonymous) (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/cucumber/src/user_code_runner.js:74:17)
+    at Generator.throw ((anonymous))
+    at Generator.tryCatcher (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/util.js:16:23)
+    at PromiseSpawn._promiseRejected (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/generators.js:107:10)
+    at Promise._settlePromise (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/promise.js:576:26)
+    at Promise._settlePromise0 (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/promise.js:689:18)
+    at Async._drainQueue (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:789:20)
+    at tryOnImmediate (timers.js:751:5)
+    at processImmediate [as _immediateCallback] (timers.js:722:5)</pre>
+                                    </div>
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
                             
                         </div>
                     </div>

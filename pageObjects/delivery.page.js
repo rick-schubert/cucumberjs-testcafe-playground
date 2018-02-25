@@ -78,7 +78,7 @@ module.exports = class DeliveryPage extends Base {
     async chooseHomeExpress() {
         await testController
             .click(this.homeExpressButton)
-            .expect(await this.disappearedLoadingOverlay.exists)
+            .expect(await this.disappearedLoadingOverlay())
             .ok("The loading overlay didn't disappear in time. Sorry!")
             .expect(await this.homeExpressRadioButton.checked)
             .ok("The Home Express radio button isn't checked.")

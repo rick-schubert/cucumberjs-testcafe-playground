@@ -6,3 +6,7 @@
 
 ## How to Run
 - `npm test`
+
+## How to Debug a Failure with Testcafe
+Inside `node_modules/.bin/cucumber-js`, add the `--inspect-brk` flag to the bash shebang, like so: `#!/usr/bin/env node --inspect-brk`. Set a `debugger` keyword whereever in your code you want the code to stop for debugging. Launch `chrome://inspect` to debug it nicely with the developer tools.
+

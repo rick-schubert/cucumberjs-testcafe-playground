@@ -1,9 +1,15 @@
 const browser = require("./../clienthelpers")
 const {Selector} = require("testcafe")
+const Base = require("./base.page")
 
-module.exports = class PDP {
+module.exports = class PDP extends Base {
     constructor() {
-        this.pageLoadErrorMsg = "The PDP either didn't fully load or it couldn't navigate to it."
+        super()
+        this.pageTitle = "PDP"
+        this.characteristicPageElements = [
+            this.addToBagButton
+            // this.nonexistingelement
+        ]
     }
 
     get addToBagButton() {
@@ -16,16 +22,6 @@ module.exports = class PDP {
 
     get addToBagConfirmationModalCloseIcon() {
         return Selector(".Modal-closeIcon").with({boundTestRun: testController})
-    }
-
-    async awaitFullyLoaded() {
-        await testController
-            .expect(await this.addToBagButton())
-            .ok(this.pageLoadErrorMsg)
-        // Use to verify that the loading mechanism actually works
-        await testController
-            .expect(await this.nonexistingelement())
-            .ok(this.pageLoadErrorMsg)
     }
 
     async addProductToBag() {

@@ -5,7 +5,8 @@ const PaymentPage = require("./payment.page")
 module.exports = class DeliveryPage extends Base {
     constructor() {
         super()
-        this.pageLoadErrorMsg = "The Delivery Page either didn't fully load or it couldn't navigate to it."
+        this.pageTitle = "Delivery Page (Checkout V2)"
+        this.characteristicPageElements = [this.proceedToPaymentButton]
     }
 
     get proceedToPaymentButton() {
@@ -15,7 +16,9 @@ module.exports = class DeliveryPage extends Base {
     }
 
     get homeExpressButton() {
-        return Selector(".FormComponent-deliveryMethod[for=\"delivery-method-home_express\"]").with({
+        return Selector(
+            '.FormComponent-deliveryMethod[for="delivery-method-home_express"]'
+        ).with({
             boundTestRun: testController
         })
     }
@@ -27,7 +30,7 @@ module.exports = class DeliveryPage extends Base {
     }
 
     get manualEntryCountryDropdown() {
-        return Selector("[aria-label=\"Delivery country\"]").with({
+        return Selector('[aria-label="Delivery country"]').with({
             boundTestRun: testController
         })
     }
@@ -72,19 +75,13 @@ module.exports = class DeliveryPage extends Base {
         })
     }
 
-    async awaitFullyLoaded() {
-        await testController
-        .expect(await this.proceedToPaymentButton())
-        .ok(this.pageLoadErrorMsg)
-    }
-
     async chooseHomeExpress() {
         await testController
-        .click(this.homeExpressButton)
-        .expect(await this.disappearedLoadingOverlay.exists)
-        .ok("The loading overlay didn't disappear in time. Sorry!")
-        .expect(await this.homeExpressRadioButton.checked)
-        .ok("The Home Express radio button isn't checked.")
+            .click(this.homeExpressButton)
+            .expect(await this.disappearedLoadingOverlay.exists)
+            .ok("The loading overlay didn't disappear in time. Sorry!")
+            .expect(await this.homeExpressRadioButton.checked)
+            .ok("The Home Express radio button isn't checked.")
     }
 
     async provideDeliveryDetailsManually(country) {
@@ -92,19 +89,34 @@ module.exports = class DeliveryPage extends Base {
             .click(this.manualEntryCountryDropdown)
             .click(this.manualEntryCountryDropdownOptions.withText(country))
             .expect(this.manualEntryCountryDropdown.value)
-            .eql(country, "The country option from the dropdown hasn't been selected properly.")
+            .eql(
+                country,
+                "The country option from the dropdown hasn't been selected properly."
+            )
             .typeText(this.firstNameInput, "Testy")
             .expect(this.firstNameInput.value)
-            .eql("Testy", "The first name field hasn't been populated properly.")
+            .eql(
+                "Testy",
+                "The first name field hasn't been populated properly."
+            )
             .typeText(this.lastNameInput, "McTest")
             .expect(this.lastNameInput.value)
-            .eql("McTest", "The last name field hasn't been populated properly.")
+            .eql(
+                "McTest",
+                "The last name field hasn't been populated properly."
+            )
             .typeText(this.phoneNumberInput, "0987654321")
             .expect(this.phoneNumberInput.value)
-            .eql("0987654321", "The phpone number field hasn't been populated properly.")
+            .eql(
+                "0987654321",
+                "The phpone number field hasn't been populated properly."
+            )
             .typeText(this.manualEntryAddressLineOneInput, "Sesame Street")
             .expect(this.manualEntryAddressLineOneInput.value)
-            .eql("Sesame Street", "The address line 1 field hasn't been populated properly.")
+            .eql(
+                "Sesame Street",
+                "The address line 1 field hasn't been populated properly."
+            )
             .typeText(this.manualEntryCityInput, "Oz")
             .expect(this.manualEntryCityInput.value)
             .eql("Oz", "The city field hasn't been populated properly.")
@@ -113,13 +125,16 @@ module.exports = class DeliveryPage extends Base {
             await testController
                 .typeText(this.manualEntryPostCodeInput, "90210")
                 .expect(this.manualEntryPostCodeInput.value)
-                .eql("90210", "The post code field hasn't been populated properly.")
+                .eql(
+                    "90210",
+                    "The post code field hasn't been populated properly."
+                )
         }
     }
 
     async proceedToPayment() {
         await testController.click(this.proceedToPaymentButton)
         const paymentpage = new PaymentPage()
-        await paymentpage.awaitFullyLoaded()
+        await paymentpage.waitToBeLoaded()
     }
 }

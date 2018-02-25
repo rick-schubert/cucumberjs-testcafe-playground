@@ -11,9 +11,9 @@ const ThankYouPage = require("./../../pageObjects/thankyou.page")
 
 Given("I am on a page", async (table) => {
     await testController.navigateTo("http://local.m.us.topshop.com:8080")
-
+    // await testController.navigateTo("http://m.us.topshop.com")
     await ClientFunction(() => {
-        document.cookie="featuresOverride={\"FEATURE_NEW_CHECKOUT\":true}"
+        document.cookie = 'featuresOverride={"FEATURE_NEW_CHECKOUT":true}'
         location.reload()
     }).with({boundTestRun: testController})()
 })
@@ -88,5 +88,5 @@ When("I place the order", async () => {
 
 Then("I see the confirmation for my order", async () => {
     const thankyoupage = new ThankYouPage()
-    await thankyoupage.awaitFullyLoaded()
+    await thankyoupage.waitToBeLoaded()
 })

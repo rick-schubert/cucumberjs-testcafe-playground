@@ -39,7 +39,7 @@ module.exports = class Navigation {
             )
         await testController.pressKey("enter")
         const pdp = new PDP()
-        await pdp.awaitFullyLoaded()
+        await pdp.waitToBeLoaded()
     }
 
     async openMiniBag() {

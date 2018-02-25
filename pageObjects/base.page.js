@@ -14,12 +14,14 @@ module.exports = class Base {
 
     async waitToBeLoaded() {
         this.characteristicPageElements.forEach(async (element) => {
+            console.log("QARS", element)
+            console.log("QARS", JSON.stringify(element))
             await testController
                 .expect(await element.exists)
                 .ok(
                     `${
                         this.pageTitle
-                    }: Couldn't be fully loaded. Couldn't find ${element.node}`
+                    }: Couldn't be fully loaded. Couldn't find ${element}`
                 )
         })
     }

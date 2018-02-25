@@ -266,8 +266,8 @@ pre {
           <a class="navbar-brand">Cucumberjs Report</a>
           <div class="project-name visible-md visible-lg">cucumberjs-tryout</div>
           <div class="label-container">
-            <span class="label label-success" title=scenarios>Passed: 1</span>
-            <span class="label label-danger" title=scenarios>Failed: 0</span>
+            <span class="label label-success" title=scenarios>Passed: 0</span>
+            <span class="label label-danger" title=scenarios>Failed: 1</span>
           </div>
         </div>
       </div>
@@ -275,7 +275,7 @@ pre {
 
     <div class="container">
 
-      <div class="generated-on">Sat Feb 24 2018 23:47:10 GMT+0000 (GMT)</div>
+      <div class="generated-on">Sun Feb 25 2018 11:02:53 GMT+0000 (GMT)</div>
 
       <div class="row">
         <div class="chart col-lg-6 col-md-6" id="piechart_features"></div>
@@ -298,8 +298,8 @@ pre {
                         <i class="glyphicon glyphicon-chevron-down"></i>
                         <b>Feature:</b>Checkout Smoke Tests - New User Purchase Journeys
                         <span class="label-container">
-              <span class="label label-success" title="1 Scenarios Passed">1</span>
               
+              <span class="label label-danger" title="1 Scenarios Failed">1</span>
               
               
               
@@ -320,18 +320,18 @@ pre {
                                 <a data-toggle="collapse" href="#collapseScenariocucumberjs_tryout0_0">
                                     <div>
 
-                                        <div style="padding-right: 30px">
+                                        <div style="padding-right: 70px">
                                             <i class="glyphicon glyphicon-chevron-right"></i>
                                             <i class="glyphicon glyphicon-chevron-down"></i>
                                             <b>Scenario:</b>User registers and makes a purchase
                                         </div>
                                         <div>
                             <span class="label-container">
-                              <span class="label label-success" title="14 Steps Passed">14</span>
+                              <span class="label label-success" title="3 Steps Passed">3</span>
                               
                               
-                              
-                              
+                              <span class="label label-warning" title="10 Steps Skipped">10</span>
+                              <span class="label label-danger" title="1 Steps Failed">1</span>
                               
                             </span>
                                         </div>
@@ -358,7 +358,7 @@ pre {
                           <span> I am on a page</span>
                           
                               <span class="step-duration">
-                               16s 311ms
+                               15s 654ms
                               </span>
                             
                          
@@ -436,7 +436,7 @@ pre {
                           <span> I search for a product code</span>
                           
                               <span class="step-duration">
-                               13s 210ms
+                               8s 105ms
                               </span>
                             
                          
@@ -470,7 +470,7 @@ pre {
                           <span> I add the product to the bag</span>
                           
                               <span class="step-duration">
-                               3s 270ms
+                               3s 292ms
                               </span>
                             
                          
@@ -496,7 +496,7 @@ pre {
                                 <div class="row steps">
                                     
                                     
-                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    <span class="label label-danger" title="Failed"><i class="glyphicon glyphicon-remove"></i></span>
                                     
                                     
                                     <span class="text">
@@ -504,7 +504,7 @@ pre {
                           <span> I dismiss the add to bag confirmation modal</span>
                           
                               <span class="step-duration">
-                               3s 588ms
+                               7ms
                               </span>
                             
                          
@@ -514,6 +514,42 @@ pre {
                                     
                                     
 
+                                    
+                                    <a href="#error0_04" data-toggle="collapse">+ Show Error</a>
+                                    <div id="error0_04" class="collapse">
+                                        <pre class=info>Error: ExternalAssertionLibraryError {
+  type: 'externalAssertionLibraryError',
+  isTestCafeError: true,
+  callsite: 
+   CallsiteRecord {
+     filename: '/Users/schuber/Documents/github/cucumberjs-testcafe-playground/pageObjects/base.page.js',
+     lineNum: 20,
+     callsiteFrameIdx: 6,
+     stackFrames: 
+      [ [Object],
+        [Object],
+        [Object],
+        [Object],
+        [Object],
+        [Object],
+        [Object],
+        CallSite {} ],
+     isV8Frames: true },
+  errMsg: 'AssertionError: PDP: Couldn\'t be fully loaded. Couldn\'t find function __$$clientFunction$$() {\n            var testRun = builder.getBoundTestRun() || _testRunTracker2.default.resolveContextTestRun();\n            var callsite = (0, _getCallsite.getCallsiteForMethod)(builder.callsiteNames.execution);\n            var args = [];\n\n            // OPTIMIZATION: don\'t leak `arguments` object.\n            for (var i = 0; i ( arguments.length; i++) {\n                args.push(arguments[i]);\n            }return builder._executeCommand(args, testRun, callsite);\n        }: expected false to be truthy' }
+    at Function.(anonymous) (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/cucumber/src/user_code_runner.js:74:17)
+    at Generator.throw ((anonymous))
+    at Generator.tryCatcher (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/util.js:16:23)
+    at PromiseSpawn._promiseRejected (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/generators.js:107:10)
+    at Promise._settlePromise (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/promise.js:576:26)
+    at Promise._settlePromise0 (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/promise.js:689:18)
+    at Async._drainQueue (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:789:20)
+    at tryOnImmediate (timers.js:751:5)
+    at processImmediate [as _immediateCallback] (timers.js:722:5)</pre>
+                                    </div>
                                     
 
                                     
@@ -530,7 +566,7 @@ pre {
                                 <div class="row steps">
                                     
                                     
-                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus"></i></span>
                                     
                                     
                                     <span class="text">
@@ -538,7 +574,7 @@ pre {
                           <span> I view the bag</span>
                           
                               <span class="step-duration">
-                               515ms
+                               0s
                               </span>
                             
                          
@@ -564,7 +600,7 @@ pre {
                                 <div class="row steps">
                                     
                                     
-                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus"></i></span>
                                     
                                     
                                     <span class="text">
@@ -572,7 +608,7 @@ pre {
                           <span> I proceed to checkout from the &quot;minibag&quot;</span>
                           
                               <span class="step-duration">
-                               3s 927ms
+                               0s
                               </span>
                             
                          
@@ -598,7 +634,7 @@ pre {
                                 <div class="row steps">
                                     
                                     
-                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus"></i></span>
                                     
                                     
                                     <span class="text">
@@ -606,7 +642,7 @@ pre {
                           <span> I register &quot;during checkout&quot;</span>
                           
                               <span class="step-duration">
-                               17s 210ms
+                               0s
                               </span>
                             
                          
@@ -632,7 +668,7 @@ pre {
                                 <div class="row steps">
                                     
                                     
-                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus"></i></span>
                                     
                                     
                                     <span class="text">
@@ -640,7 +676,7 @@ pre {
                           <span> I choose &quot;Home Express&quot; as the delivery option</span>
                           
                               <span class="step-duration">
-                               3s 316ms
+                               0s
                               </span>
                             
                          
@@ -666,7 +702,7 @@ pre {
                                 <div class="row steps">
                                     
                                     
-                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus"></i></span>
                                     
                                     
                                     <span class="text">
@@ -674,7 +710,7 @@ pre {
                           <span> I enter my delivery address</span>
                           
                               <span class="step-duration">
-                               10s 593ms
+                               0s
                               </span>
                             
                          
@@ -736,7 +772,7 @@ pre {
                                 <div class="row steps">
                                     
                                     
-                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus"></i></span>
                                     
                                     
                                     <span class="text">
@@ -744,7 +780,7 @@ pre {
                           <span> I proceed to payment</span>
                           
                               <span class="step-duration">
-                               790ms
+                               0s
                               </span>
                             
                          
@@ -770,7 +806,7 @@ pre {
                                 <div class="row steps">
                                     
                                     
-                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus"></i></span>
                                     
                                     
                                     <span class="text">
@@ -778,7 +814,7 @@ pre {
                           <span> I enter my credit card details</span>
                           
                               <span class="step-duration">
-                               2s 41ms
+                               0s
                               </span>
                             
                          
@@ -856,7 +892,7 @@ pre {
                                 <div class="row steps">
                                     
                                     
-                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus"></i></span>
                                     
                                     
                                     <span class="text">
@@ -864,7 +900,7 @@ pre {
                           <span> I accept the terms and conditions</span>
                           
                               <span class="step-duration">
-                               254ms
+                               0s
                               </span>
                             
                          
@@ -890,7 +926,7 @@ pre {
                                 <div class="row steps">
                                     
                                     
-                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus"></i></span>
                                     
                                     
                                     <span class="text">
@@ -898,7 +934,7 @@ pre {
                           <span> I place the order</span>
                           
                               <span class="step-duration">
-                               3s 208ms
+                               0s
                               </span>
                             
                          
@@ -924,7 +960,7 @@ pre {
                                 <div class="row steps">
                                     
                                     
-                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    <span class="label label-warning" title="Skipped"><i class="glyphicon glyphicon-minus"></i></span>
                                     
                                     
                                     <span class="text">
@@ -932,7 +968,7 @@ pre {
                           <span> I see the confirmation for my order</span>
                           
                               <span class="step-duration">
-                               25s 488ms
+                               0s
                               </span>
                             
                          
@@ -991,15 +1027,15 @@ pre {
         google.load("visualization", "1", {packages: ["corechart"]});
         google.setOnLoadCallback(function() {drawChart({
                                                             "title" : "Features",
-                                                            "failed" : 0,
-                                                            "passed" : 1,
+                                                            "failed" : 1,
+                                                            "passed" : 0,
                                                             "ambiguous" : 0
                                                         })
                                             });
         google.setOnLoadCallback(function() {drawChart({
                                                             "title" : "Scenarios",
-                                                            "failed" : 0,
-                                                            "passed" : 1,
+                                                            "failed" : 1,
+                                                            "passed" : 0,
                                                             "notdefined" : 0,
                                                             "pending" : 0,
                                                             "skipped" : 0,

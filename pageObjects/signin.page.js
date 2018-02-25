@@ -1,5 +1,5 @@
 const browser = require("./../clienthelpers")
-const uuid = require('uuid-random')
+const uuid = require("uuid-random")
 const {Selector} = require("testcafe")
 const DeliveryPage = require("./delivery.page")
 
@@ -35,6 +35,6 @@ module.exports = class SignIn {
             .typeText(this.newCustomerPasswordConfirmInput, "monty1")
             .click(this.newCustomerRegisterButton)
         const deliverypage = new DeliveryPage()
-        await deliverypage.awaitFullyLoaded()
+        await deliverypage.waitToBeLoaded()
     }
 }

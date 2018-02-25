@@ -1,4 +1,5 @@
 const {Selector} = require("testcafe")
+const emojic = require("emojic")
 
 module.exports = class Base {
     constructor() {
@@ -15,12 +16,15 @@ module.exports = class Base {
     async waitToBeLoaded() {
         this.characteristicPageElements.forEach(async (element) => {
             await testController
-                .expect(await element.exists)
+                .expect(element.exists)
                 .ok(
-                    `${
-                        this.pageTitle
-                    }: Couldn't be fully loaded. Couldn't find ${element.node}`
-                )
+                    `${this.pageTitle} didn't fully load. Call trace above. ${emojic.dizzyFace}}`
+                ).catch((err) => {
+                    console.log(emojic.dizzyFace,emojic.dizzyFace,emojic.dizzyFace)
+                    err.callsite.stackFrames.forEach((errorStack) => {
+                        console.error(errorStack.toString())
+                    })
+                })
         })
     }
 }

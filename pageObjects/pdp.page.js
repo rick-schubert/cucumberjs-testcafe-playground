@@ -7,8 +7,8 @@ module.exports = class PDP extends Base {
         super()
         this.pageTitle = "PDP"
         this.characteristicPageElements = [
-            this.addToBagButton
-            // this.nonexistingelement
+            this.addToBagButton,
+            this.nonexistingelement
         ]
     }
 

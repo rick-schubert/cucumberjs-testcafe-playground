@@ -23,7 +23,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 6659000000
+              "duration": 5988000000
             }
           },
           {
@@ -55,7 +55,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16311000000
+              "duration": 8929000000
             }
           },
           {
@@ -68,7 +68,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13210000000
+              "duration": 7460000000
             }
           },
           {
@@ -80,8 +80,9 @@
               "location": "features/support/stepdefinitions.js:26"
             },
             "result": {
-              "status": "passed",
-              "duration": 3270000000
+              "status": "failed",
+              "duration": 10070000000,
+              "error_message": "Error: ExternalAssertionLibraryError {\n  type: 'externalAssertionLibraryError',\n  isTestCafeError: true,\n  callsite: \n   CallsiteRecord {\n     filename: '/Users/schuber/Documents/github/cucumberjs-testcafe-playground/pageObjects/base.page.js',\n     lineNum: 19,\n     callsiteFrameIdx: 6,\n     stackFrames: \n      [ [Object],\n        [Object],\n        [Object],\n        [Object],\n        [Object],\n        [Object],\n        [Object],\n        CallSite {},\n        [Object],\n        [Object],\n        CallSite {} ],\n     isV8Frames: true },\n  errMsg: 'AssertionError: PDP didn\\'t fully load. Check the error output.}: expected false to be truthy' }\n    at Function.<anonymous> (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/cucumber/src/user_code_runner.js:74:17)\n    at Generator.throw (<anonymous>)\n    at Generator.tryCatcher (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/util.js:16:23)\n    at PromiseSpawn._promiseRejected (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/generators.js:107:10)\n    at Promise._settlePromise (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/promise.js:576:26)\n    at Promise._settlePromise0 (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/promise.js:614:10)\n    at Promise._settlePromises (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/promise.js:689:18)\n    at Async._drainQueue (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/async.js:133:16)\n    at Async._drainQueues (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/async.js:143:10)\n    at Immediate.Async.drainQueues (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/async.js:17:14)\n    at runCallback (timers.js:789:20)\n    at tryOnImmediate (timers.js:751:5)\n    at processImmediate [as _immediateCallback] (timers.js:722:5)"
             }
           },
           {
@@ -93,8 +94,7 @@
               "location": "features/support/stepdefinitions.js:31"
             },
             "result": {
-              "status": "passed",
-              "duration": 3588000000
+              "status": "skipped"
             }
           },
           {
@@ -106,8 +106,7 @@
               "location": "features/support/stepdefinitions.js:36"
             },
             "result": {
-              "status": "passed",
-              "duration": 515000000
+              "status": "skipped"
             }
           },
           {
@@ -119,8 +118,7 @@
               "location": "features/support/stepdefinitions.js:41"
             },
             "result": {
-              "status": "passed",
-              "duration": 3927000000
+              "status": "skipped"
             }
           },
           {
@@ -132,8 +130,7 @@
               "location": "features/support/stepdefinitions.js:48"
             },
             "result": {
-              "status": "passed",
-              "duration": 17210000000
+              "status": "skipped"
             }
           },
           {
@@ -145,8 +142,7 @@
               "location": "features/support/stepdefinitions.js:53"
             },
             "result": {
-              "status": "passed",
-              "duration": 3316000000
+              "status": "skipped"
             }
           },
           {
@@ -175,8 +171,7 @@
               "location": "features/support/stepdefinitions.js:60"
             },
             "result": {
-              "status": "passed",
-              "duration": 10593000000
+              "status": "skipped"
             }
           },
           {
@@ -188,8 +183,7 @@
               "location": "features/support/stepdefinitions.js:68"
             },
             "result": {
-              "status": "passed",
-              "duration": 790000000
+              "status": "skipped"
             }
           },
           {
@@ -222,8 +216,7 @@
               "location": "features/support/stepdefinitions.js:73"
             },
             "result": {
-              "status": "passed",
-              "duration": 2041000000
+              "status": "skipped"
             }
           },
           {
@@ -235,8 +228,7 @@
               "location": "features/support/stepdefinitions.js:79"
             },
             "result": {
-              "status": "passed",
-              "duration": 254000000
+              "status": "skipped"
             }
           },
           {
@@ -248,8 +240,7 @@
               "location": "features/support/stepdefinitions.js:84"
             },
             "result": {
-              "status": "passed",
-              "duration": 3208000000
+              "status": "skipped"
             }
           },
           {
@@ -261,8 +252,7 @@
               "location": "features/support/stepdefinitions.js:89"
             },
             "result": {
-              "status": "passed",
-              "duration": 25488000000
+              "status": "skipped"
             }
           },
           {
@@ -272,8 +262,9 @@
               "location": "features/support/hooks.js:59"
             },
             "result": {
-              "status": "passed",
-              "duration": 4000000
+              "status": "failed",
+              "duration": 4000000,
+              "error_message": "Error: ExternalAssertionLibraryError {\n  type: 'externalAssertionLibraryError',\n  isTestCafeError: true,\n  callsite: \n   CallsiteRecord {\n     filename: '/Users/schuber/Documents/github/cucumberjs-testcafe-playground/pageObjects/base.page.js',\n     lineNum: 19,\n     callsiteFrameIdx: 6,\n     stackFrames: \n      [ [Object],\n        [Object],\n        [Object],\n        [Object],\n        [Object],\n        [Object],\n        [Object],\n        CallSite {},\n        [Object],\n        [Object],\n        CallSite {} ],\n     isV8Frames: true },\n  errMsg: 'AssertionError: PDP didn\\'t fully load. Check the error output.}: expected false to be truthy' }\n    at Function.<anonymous> (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/cucumber/src/user_code_runner.js:74:17)\n    at Generator.throw (<anonymous>)\n    at Generator.tryCatcher (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/util.js:16:23)\n    at PromiseSpawn._promiseRejected (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/generators.js:107:10)\n    at Promise._settlePromise (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/promise.js:576:26)\n    at Promise._settlePromise0 (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/promise.js:614:10)\n    at Promise._settlePromises (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/promise.js:689:18)\n    at Async._drainQueue (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/async.js:133:16)\n    at Async._drainQueues (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/async.js:143:10)\n    at Immediate.Async.drainQueues (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/async.js:17:14)\n    at runCallback (timers.js:789:20)\n    at tryOnImmediate (timers.js:751:5)\n    at processImmediate [as _immediateCallback] (timers.js:722:5)"
             }
           }
         ]

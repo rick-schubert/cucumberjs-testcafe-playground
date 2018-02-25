@@ -18,8 +18,8 @@ function createTestFile() {
     fs.writeFileSync(
         "test.js",
         'import testControllerHolder from "./features/support/testControllerHolder.js";\n\n' +
-            'fixture("fixture")\n' +
-            'test("test", testControllerHolder.capture)'
+            'fixture("")\n' +
+            'test("", testControllerHolder.capture)'
     )
 }
 
@@ -34,7 +34,7 @@ function runTest(iteration) {
                 .src("./test.js")
                 .browsers("chrome")
                 .screenshots("./../../screenshots")
-                .run({skipJsErrors: true, selectorTimeout: TIMEOUT, assertionTimeout: TIMEOUT})
+                .run({skipJsErrors: true, selectorTimeout: TIMEOUT, assertionTimeout: 10000})
                 .catch(function(error) {
                     console.log(error)
                 })
@@ -45,8 +45,7 @@ function runTest(iteration) {
         })
 }
 
-// Disable cucumber timeout to gain access to testcafe timeout reporting
-setDefaultTimeout(-1)
+setDefaultTimeout(TIMEOUT)
 
 BeforeAll(function() {})
 
@@ -57,9 +56,9 @@ Before(function() {
     return this.waitForTestController
 })
 
-After(function() {
+After(async function() {
     fs.unlinkSync("test.js")
-    testController.takeScreenshot()
+    await testController.takeScreenshot()
     testControllerHolder.free()
     testcafe.close()
 })

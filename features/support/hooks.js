@@ -11,7 +11,7 @@ var {
 } = require("cucumber")
 
 var testcafe = null
-var TIMEOUT = 60000
+var TIMEOUT = 25000
 var n = 0
 
 function createTestFile() {
@@ -34,7 +34,7 @@ function runTest(iteration) {
                 .src("./test.js")
                 .browsers("chrome")
                 .screenshots("./../../screenshots")
-                .run({skipJsErrors: true, selectorTimeout: 60000})
+                .run({skipJsErrors: true, selectorTimeout: TIMEOUT, assertionTimeout: TIMEOUT})
                 .catch(function(error) {
                     console.log(error)
                 })
@@ -45,7 +45,8 @@ function runTest(iteration) {
         })
 }
 
-setDefaultTimeout(TIMEOUT)
+// Disable cucumber timeout to gain access to testcafe timeout reporting
+setDefaultTimeout(-1)
 
 BeforeAll(function() {})
 

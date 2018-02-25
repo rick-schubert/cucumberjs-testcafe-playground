@@ -23,9 +23,9 @@ module.exports = class PDP {
             .expect(await this.addToBagButton())
             .ok(this.pageLoadErrorMsg)
         // Use to verify that the loading mechanism actually works
-        // await testController
-        //     .expect(this.nonexistingelement.exists)
-        //     .ok(this.pageLoadErrorMsg)
+        await testController
+            .expect(await this.nonexistingelement())
+            .ok(this.pageLoadErrorMsg)
     }
 
     async addProductToBag() {

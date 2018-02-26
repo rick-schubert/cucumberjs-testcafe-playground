@@ -1,35 +1,28 @@
-const {Selector} = require("testcafe")
+const {Selector} = require("./../features/support/testcafewrappers")
 const PaymentPage = require("./payment.page")
 const Base = require("./base.page")
 
 module.exports = class PaymentPage extends Base {
     constructor() {
+        super()
         this.pageTitle = "Payment Page (Checkout V2)"
         this.characteristicPageElements = [this.orderNowButton]
     }
 
     get orderNowButton() {
-        return Selector(".PaymentContainer-paynow").with({
-            boundTestRun: testController
-        })
+        return Selector(".PaymentContainer-paynow")
     }
 
     get creditCardNumberInput() {
-        return Selector(".Input-field-cardNumber").with({
-            boundTestRun: testController
-        })
+        return Selector(".Input-field-cardNumber")
     }
 
     get creditCardCvvInput() {
-        return Selector(".Input-field-cvv").with({
-            boundTestRun: testController
-        })
+        return Selector(".Input-field-cvv")
     }
 
     get creditCardExpiryMonthDropdown() {
-        return Selector('.Select-select[name="expiryMonth"]').with({
-            boundTestRun: testController
-        })
+        return Selector('.Select-select[name="expiryMonth"]')
     }
 
     get creditCardExpiryMonthDropdownOptions() {
@@ -37,9 +30,7 @@ module.exports = class PaymentPage extends Base {
     }
 
     get creditCardExpiryYearDropdown() {
-        return Selector('.Select-select[name="expiryYear"]').with({
-            boundTestRun: testController
-        })
+        return Selector('.Select-select[name="expiryYear"]')
     }
 
     get creditCardExpiryYearDropdownOptions() {
@@ -49,17 +40,13 @@ module.exports = class PaymentPage extends Base {
     get acceptTermsAndConditionsCheckboxSpan() {
         return Selector(
             ".FormComponent-isAcceptedTermsAndConditions .Checkbox-check"
-        ).with({
-            boundTestRun: testController
-        })
+        )
     }
 
     get acceptTermsAndConditionsCheckboxInput() {
         return Selector(
             ".FormComponent-isAcceptedTermsAndConditions input"
-        ).with({
-            boundTestRun: testController
-        })
+        )
     }
 
     async enterCreditCardDetails(paymentDetails) {

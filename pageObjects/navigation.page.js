@@ -1,29 +1,22 @@
 const browser = require("./../clienthelpers")
 const config = require("./../config")
-const {Selector} = require("testcafe")
+const {Selector} = require("./../features/support/testcafewrappers")
 const PDP = require("./pdp.page")
-const routes = require("./../features/support/constants/routes")
 
 module.exports = class Navigation {
     get mobileSearchButton() {
-        return Selector(".Header-searchButton").with({
-            boundTestRun: testController
-        })
+        return Selector(".Header-searchButton")
     }
     get searchInput() {
-        return Selector(".SearchBar-queryInput").with({
-            boundTestRun: testController
-        })
+        return Selector(".SearchBar-queryInput")
     }
 
     get desktopMiniBagIcon() {
-        return Selector(".ShoppingCart").with({boundTestRun: testController})
+        return Selector(".ShoppingCart")
     }
 
     get mobileMiniBagIcon() {
-        return Selector(".Header-shoppingCartIconbutton").with({
-            boundTestRun: testController
-        })
+        return Selector(".Header-shoppingCartIconbutton")
     }
 
     async search(searchTerm) {

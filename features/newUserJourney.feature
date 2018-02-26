@@ -1,7 +1,7 @@
 Feature: Checkout Smoke Tests - New User Purchase Journeys
 
     Scenario: User registers and makes a purchase
-        Given I am on a page
+        Given I start on a page
             | Brand   | Country | Page |
             | Topshop | US      | Home |
         When I search for a product code

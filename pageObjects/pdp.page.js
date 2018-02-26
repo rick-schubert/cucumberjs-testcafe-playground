@@ -1,5 +1,5 @@
 const browser = require("./../clienthelpers")
-const {Selector} = require("testcafe")
+const {Selector} = require("./../features/support/testcafewrappers")
 const Base = require("./base.page")
 
 module.exports = class PDP extends Base {
@@ -13,15 +13,15 @@ module.exports = class PDP extends Base {
     }
 
     get addToBagButton() {
-        return Selector(".AddToBag").with({boundTestRun: testController})
+        return Selector(".AddToBag")
     }
 
     get nonexistingelement() {
-        return Selector(".thisdoesntexist").with({boundTestRun: testController})
+        return Selector(".thisdoesntexist")
     }
 
     get addToBagConfirmationModalCloseIcon() {
-        return Selector(".Modal-closeIcon").with({boundTestRun: testController})
+        return Selector(".Modal-closeIcon")
     }
 
     async addProductToBag() {

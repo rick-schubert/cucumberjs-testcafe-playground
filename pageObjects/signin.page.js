@@ -1,31 +1,23 @@
 const browser = require("./../clienthelpers")
 const uuid = require("uuid-random")
-const {Selector} = require("testcafe")
+const {Selector} = require("./../features/support/testcafewrappers")
 const DeliveryPage = require("./delivery.page")
 
 module.exports = class SignIn {
     get newCustomerEmailAddressInput() {
-        return Selector(".Register-form .Input-field-email").with({
-            boundTestRun: testController
-        })
+        return Selector(".Register-form .Input-field-email")
     }
 
     get newCustomerPasswordInput() {
-        return Selector(".Register-form .Input-field-password").with({
-            boundTestRun: testController
-        })
+        return Selector(".Register-form .Input-field-password")
     }
 
     get newCustomerPasswordConfirmInput() {
-        return Selector(".Register-form .Input-field-passwordConfirm").with({
-            boundTestRun: testController
-        })
+        return Selector(".Register-form .Input-field-passwordConfirm")
     }
 
     get newCustomerRegisterButton() {
-        return Selector(".Register-saveChanges").with({
-            boundTestRun: testController
-        })
+        return Selector(".Register-saveChanges")
     }
 
     async registerDuringCheckout() {

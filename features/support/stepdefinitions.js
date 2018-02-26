@@ -9,9 +9,18 @@ const DeliveryPage = require("./../../pageObjects/delivery.page")
 const PaymentPage = require("./../../pageObjects/payment.page")
 const ThankYouPage = require("./../../pageObjects/thankyou.page")
 
-Given("I am on a page", async (table) => {
-    await testController.navigateTo("http://local.m.us.topshop.com:8080")
-    // await testController.navigateTo("http://m.us.topshop.com")
+Given("I start on a page", async (table) => {
+    const startingOpts = table.hashes()[0]
+    let startUrl = "http://local.m." +
+                    (startingOpts.Country !== "UK" ? startingOpts.Country : "") +
+                    "." +
+                    startingOpts.Brand +
+                    ".com:8080"
+    if (startingOpts.Page === "Home") {
+        startUrl = startUrl + "/"
+    }
+    // await testController.expect("bazinga").eql("adfadfs")
+    await testController.navigateTo(startUrl)
     await ClientFunction(() => {
         document.cookie = 'featuresOverride={"FEATURE_NEW_CHECKOUT":true}'
         location.reload()
@@ -71,9 +80,9 @@ When("I proceed to payment", async () => {
 })
 
 When("I enter my credit card details", async (table) => {
-    const stepOptions = table.hashes()[0]
+    const creditCardDetails = table.hashes()[0]
     const paymentpage = new PaymentPage()
-    await paymentpage.enterCreditCardDetails(stepOptions)
+    await paymentpage.enterCreditCardDetails(creditCardDetails)
 })
 
 When("I accept the terms and conditions", async () => {

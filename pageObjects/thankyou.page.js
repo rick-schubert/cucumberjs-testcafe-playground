@@ -1,4 +1,4 @@
-const {Selector} = require("testcafe")
+const {Selector} = require("./../features/support/testcafewrappers")
 const Base = require("./base.page")
 
 module.exports = class ThankYou extends Base {
@@ -12,8 +12,6 @@ module.exports = class ThankYou extends Base {
     }
 
     get continueShoppingCTA() {
-        return Selector(".SummaryCompleted-button").with({
-            boundTestRun: testController
-        })
+        return Selector(".SummaryCompleted-button")
     }
 }

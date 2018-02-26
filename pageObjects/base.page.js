@@ -1,16 +1,14 @@
-const {Selector} = require("testcafe")
+const {Selector} = require("./../features/support/testcafewrappers")
 const emojic = require("emojic")
 
 module.exports = class Base {
     constructor() {
-        this.pageTitle = "Undefined (base class)"
+        this.pageTitle = "Base class"
         this.characteristicPageElements = []
     }
 
     get disappearedLoadingOverlay() {
-        return Selector('.LoaderOverlay[aria-busy="false"]').with({
-            boundTestRun: testController
-        })
+        return Selector('.LoaderOverlay[aria-busy="false"]')
     }
 
     async waitToBeLoaded() {
@@ -18,7 +16,7 @@ module.exports = class Base {
             await testController
                 .expect(element.exists)
                 .ok(
-                    `${this.pageTitle} didn't fully load. Call trace above. ${emojic.dizzyFace}}`
+                    `${this.pageTitle} didn't fully load. See call trace above.`
                 ).catch((err) => {
                     console.log(emojic.dizzyFace,emojic.dizzyFace,emojic.dizzyFace)
                     err.callsite.stackFrames.forEach((errorStack) => {

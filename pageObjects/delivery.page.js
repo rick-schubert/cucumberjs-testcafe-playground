@@ -1,4 +1,4 @@
-const {Selector} = require("testcafe")
+const {Selector} = require("./../features/support/testcafewrappers")
 const Base = require("./base.page")
 const PaymentPage = require("./payment.page")
 
@@ -10,29 +10,21 @@ module.exports = class DeliveryPage extends Base {
     }
 
     get proceedToPaymentButton() {
-        return Selector(".DeliveryContainer-nextButton").with({
-            boundTestRun: testController
-        })
+        return Selector(".DeliveryContainer-nextButton")
     }
 
     get homeExpressButton() {
         return Selector(
             '.FormComponent-deliveryMethod[for="delivery-method-home_express"]'
-        ).with({
-            boundTestRun: testController
-        })
+        )
     }
 
     get homeExpressRadioButton() {
-        return Selector("#delivery-method-home_express").with({
-            boundTestRun: testController
-        })
+        return Selector("#delivery-method-home_express")
     }
 
     get manualEntryCountryDropdown() {
-        return Selector('[aria-label="Delivery country"]').with({
-            boundTestRun: testController
-        })
+        return Selector('[aria-label="Delivery country"]')
     }
 
     get manualEntryCountryDropdownOptions() {
@@ -40,47 +32,35 @@ module.exports = class DeliveryPage extends Base {
     }
 
     get manualEntryAddressLineOneInput() {
-        return Selector(".Input-field-address1").with({
-            boundTestRun: testController
-        })
+        return Selector(".Input-field-address1")
     }
 
     get manualEntryPostCodeInput() {
-        return Selector(".Input-field-postcode").with({
-            boundTestRun: testController
-        })
+        return Selector(".Input-field-postcode")
     }
 
     get manualEntryCityInput() {
-        return Selector(".Input-field-city").with({
-            boundTestRun: testController
-        })
+        return Selector(".Input-field-city")
     }
 
     get firstNameInput() {
-        return Selector(".Input-field-firstName").with({
-            boundTestRun: testController
-        })
+        return Selector(".Input-field-firstName")
     }
 
     get lastNameInput() {
-        return Selector(".Input-field-lastName").with({
-            boundTestRun: testController
-        })
+        return Selector(".Input-field-lastName")
     }
 
     get phoneNumberInput() {
-        return Selector(".Input-field-telephone").with({
-            boundTestRun: testController
-        })
+        return Selector(".Input-field-telephone")
     }
 
     async chooseHomeExpress() {
         await testController
             .click(this.homeExpressButton)
-            .expect(await this.disappearedLoadingOverlay())
+            .expect(this.disappearedLoadingOverlay.exists)
             .ok("The loading overlay didn't disappear in time. Sorry!")
-            .expect(await this.homeExpressRadioButton.checked)
+            .expect(this.homeExpressRadioButton.checked)
             .ok("The Home Express radio button isn't checked.")
     }
 

@@ -1,11 +1,9 @@
 const browser = require("./../clienthelpers")
-const {Selector} = require("testcafe")
+const {Selector} = require("./../features/support/testcafewrappers")
 
 module.exports = class MiniBag {
     get checkoutNowButton() {
-        return Selector(".Button.MiniBag-continueButton").with({
-            boundTestRun: testController
-        })
+        return Selector(".Button.MiniBag-continueButton")
     }
 
     async goToCheckout() {

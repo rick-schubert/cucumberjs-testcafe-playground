@@ -19,11 +19,11 @@
             "keyword": "Before",
             "hidden": true,
             "match": {
-              "location": "features/support/hooks.js:52"
+              "location": "features/support/hooks.js:63"
             },
             "result": {
               "status": "passed",
-              "duration": 5988000000
+              "duration": 6004000000
             }
           },
           {
@@ -49,13 +49,13 @@
             ],
             "keyword": "Given ",
             "line": 4,
-            "name": "I am on a page",
+            "name": "I start on a page",
             "match": {
               "location": "features/support/stepdefinitions.js:12"
             },
             "result": {
               "status": "passed",
-              "duration": 8929000000
+              "duration": 12069000000
             }
           },
           {
@@ -64,11 +64,11 @@
             "line": 7,
             "name": "I search for a product code",
             "match": {
-              "location": "features/support/stepdefinitions.js:21"
+              "location": "features/support/stepdefinitions.js:30"
             },
             "result": {
               "status": "passed",
-              "duration": 7460000000
+              "duration": 8939000000
             }
           },
           {
@@ -77,12 +77,12 @@
             "line": 8,
             "name": "I add the product to the bag",
             "match": {
-              "location": "features/support/stepdefinitions.js:26"
+              "location": "features/support/stepdefinitions.js:35"
             },
             "result": {
               "status": "failed",
-              "duration": 10070000000,
-              "error_message": "Error: ExternalAssertionLibraryError {\n  type: 'externalAssertionLibraryError',\n  isTestCafeError: true,\n  callsite: \n   CallsiteRecord {\n     filename: '/Users/schuber/Documents/github/cucumberjs-testcafe-playground/pageObjects/base.page.js',\n     lineNum: 19,\n     callsiteFrameIdx: 6,\n     stackFrames: \n      [ [Object],\n        [Object],\n        [Object],\n        [Object],\n        [Object],\n        [Object],\n        [Object],\n        CallSite {},\n        [Object],\n        [Object],\n        CallSite {} ],\n     isV8Frames: true },\n  errMsg: 'AssertionError: PDP didn\\'t fully load. Check the error output.}: expected false to be truthy' }\n    at Function.<anonymous> (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/cucumber/src/user_code_runner.js:74:17)\n    at Generator.throw (<anonymous>)\n    at Generator.tryCatcher (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/util.js:16:23)\n    at PromiseSpawn._promiseRejected (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/generators.js:107:10)\n    at Promise._settlePromise (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/promise.js:576:26)\n    at Promise._settlePromise0 (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/promise.js:614:10)\n    at Promise._settlePromises (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/promise.js:689:18)\n    at Async._drainQueue (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/async.js:133:16)\n    at Async._drainQueues (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/async.js:143:10)\n    at Immediate.Async.drainQueues (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/async.js:17:14)\n    at runCallback (timers.js:789:20)\n    at tryOnImmediate (timers.js:751:5)\n    at processImmediate [as _immediateCallback] (timers.js:722:5)"
+              "duration": 10172000000,
+              "error_message": "Error: ExternalAssertionLibraryError {\n  type: 'externalAssertionLibraryError',\n  isTestCafeError: true,\n  callsite: \n   CallsiteRecord {\n     filename: '/Users/schuber/Documents/github/cucumberjs-testcafe-playground/pageObjects/base.page.js',\n     lineNum: 17,\n     callsiteFrameIdx: 6,\n     stackFrames: \n      [ [Object],\n        [Object],\n        [Object],\n        [Object],\n        [Object],\n        [Object],\n        [Object],\n        CallSite {},\n        [Object],\n        [Object],\n        CallSite {} ],\n     isV8Frames: true },\n  errMsg: 'AssertionError: PDP didn\\'t fully load. See call trace above.: expected false to be truthy' }\n    at Function.<anonymous> (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/cucumber/src/user_code_runner.js:74:17)\n    at Generator.throw (<anonymous>)\n    at Generator.tryCatcher (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/util.js:16:23)\n    at PromiseSpawn._promiseRejected (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/generators.js:107:10)\n    at Promise._settlePromise (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/promise.js:576:26)\n    at Promise._settlePromise0 (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/promise.js:614:10)\n    at Promise._settlePromises (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/promise.js:689:18)\n    at Async._drainQueue (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/async.js:133:16)\n    at Async._drainQueues (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/async.js:143:10)\n    at Immediate.Async.drainQueues (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/async.js:17:14)\n    at runCallback (timers.js:789:20)\n    at tryOnImmediate (timers.js:751:5)\n    at processImmediate [as _immediateCallback] (timers.js:722:5)"
             }
           },
           {
@@ -91,7 +91,7 @@
             "line": 9,
             "name": "I dismiss the add to bag confirmation modal",
             "match": {
-              "location": "features/support/stepdefinitions.js:31"
+              "location": "features/support/stepdefinitions.js:40"
             },
             "result": {
               "status": "skipped"
@@ -103,7 +103,7 @@
             "line": 10,
             "name": "I view the bag",
             "match": {
-              "location": "features/support/stepdefinitions.js:36"
+              "location": "features/support/stepdefinitions.js:45"
             },
             "result": {
               "status": "skipped"
@@ -115,7 +115,7 @@
             "line": 11,
             "name": "I proceed to checkout from the \"minibag\"",
             "match": {
-              "location": "features/support/stepdefinitions.js:41"
+              "location": "features/support/stepdefinitions.js:50"
             },
             "result": {
               "status": "skipped"
@@ -127,7 +127,7 @@
             "line": 12,
             "name": "I register \"during checkout\"",
             "match": {
-              "location": "features/support/stepdefinitions.js:48"
+              "location": "features/support/stepdefinitions.js:57"
             },
             "result": {
               "status": "skipped"
@@ -139,7 +139,7 @@
             "line": 13,
             "name": "I choose \"Home Express\" as the delivery option",
             "match": {
-              "location": "features/support/stepdefinitions.js:53"
+              "location": "features/support/stepdefinitions.js:62"
             },
             "result": {
               "status": "skipped"
@@ -168,7 +168,7 @@
             "line": 14,
             "name": "I enter my delivery address",
             "match": {
-              "location": "features/support/stepdefinitions.js:60"
+              "location": "features/support/stepdefinitions.js:69"
             },
             "result": {
               "status": "skipped"
@@ -180,7 +180,7 @@
             "line": 17,
             "name": "I proceed to payment",
             "match": {
-              "location": "features/support/stepdefinitions.js:68"
+              "location": "features/support/stepdefinitions.js:77"
             },
             "result": {
               "status": "skipped"
@@ -213,7 +213,7 @@
             "line": 18,
             "name": "I enter my credit card details",
             "match": {
-              "location": "features/support/stepdefinitions.js:73"
+              "location": "features/support/stepdefinitions.js:82"
             },
             "result": {
               "status": "skipped"
@@ -225,7 +225,7 @@
             "line": 21,
             "name": "I accept the terms and conditions",
             "match": {
-              "location": "features/support/stepdefinitions.js:79"
+              "location": "features/support/stepdefinitions.js:88"
             },
             "result": {
               "status": "skipped"
@@ -237,7 +237,7 @@
             "line": 22,
             "name": "I place the order",
             "match": {
-              "location": "features/support/stepdefinitions.js:84"
+              "location": "features/support/stepdefinitions.js:93"
             },
             "result": {
               "status": "skipped"
@@ -249,7 +249,7 @@
             "line": 23,
             "name": "I see the confirmation for my order",
             "match": {
-              "location": "features/support/stepdefinitions.js:89"
+              "location": "features/support/stepdefinitions.js:98"
             },
             "result": {
               "status": "skipped"
@@ -259,12 +259,10 @@
             "keyword": "After",
             "hidden": true,
             "match": {
-              "location": "features/support/hooks.js:59"
+              "location": "features/support/hooks.js:70"
             },
             "result": {
-              "status": "failed",
-              "duration": 4000000,
-              "error_message": "Error: ExternalAssertionLibraryError {\n  type: 'externalAssertionLibraryError',\n  isTestCafeError: true,\n  callsite: \n   CallsiteRecord {\n     filename: '/Users/schuber/Documents/github/cucumberjs-testcafe-playground/pageObjects/base.page.js',\n     lineNum: 19,\n     callsiteFrameIdx: 6,\n     stackFrames: \n      [ [Object],\n        [Object],\n        [Object],\n        [Object],\n        [Object],\n        [Object],\n        [Object],\n        CallSite {},\n        [Object],\n        [Object],\n        CallSite {} ],\n     isV8Frames: true },\n  errMsg: 'AssertionError: PDP didn\\'t fully load. Check the error output.}: expected false to be truthy' }\n    at Function.<anonymous> (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/cucumber/src/user_code_runner.js:74:17)\n    at Generator.throw (<anonymous>)\n    at Generator.tryCatcher (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/util.js:16:23)\n    at PromiseSpawn._promiseRejected (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/generators.js:107:10)\n    at Promise._settlePromise (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/promise.js:576:26)\n    at Promise._settlePromise0 (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/promise.js:614:10)\n    at Promise._settlePromises (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/promise.js:689:18)\n    at Async._drainQueue (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/async.js:133:16)\n    at Async._drainQueues (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/async.js:143:10)\n    at Immediate.Async.drainQueues (/Users/schuber/Documents/github/cucumberjs-testcafe-playground/node_modules/bluebird/js/release/async.js:17:14)\n    at runCallback (timers.js:789:20)\n    at tryOnImmediate (timers.js:751:5)\n    at processImmediate [as _immediateCallback] (timers.js:722:5)"
+              "status": "passed"
             }
           }
         ]

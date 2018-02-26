@@ -1,6 +1,6 @@
 const {Given, When, Then} = require("cucumber")
 const {ClientFunction} = require("testcafe")
-const browser = require("./../../clienthelpers")
+const buildStartingUrl = require("./helpers/buildStartingUrl")
 const Navigation = require("./../../pageObjects/navigation.page")
 const PDP = require("./../../pageObjects/pdp.page")
 const MiniBag = require("./../../pageObjects/minibag.page")
@@ -11,16 +11,7 @@ const ThankYouPage = require("./../../pageObjects/thankyou.page")
 
 Given("I start on a page", async (table) => {
     const startingOpts = table.hashes()[0]
-    let startUrl = "http://local.m." +
-                    (startingOpts.Country !== "UK" ? startingOpts.Country : "") +
-                    "." +
-                    startingOpts.Brand +
-                    ".com:8080"
-    if (startingOpts.Page === "Home") {
-        startUrl = startUrl + "/"
-    }
-    // await testController.expect("bazinga").eql("adfadfs")
-    await testController.navigateTo(startUrl)
+    await testController.navigateTo(buildStartingUrl(startingOpts))
     await ClientFunction(() => {
         document.cookie = 'featuresOverride={"FEATURE_NEW_CHECKOUT":true}'
         location.reload()

@@ -21,9 +21,14 @@ module.exports = class Navigation {
 
     async search(searchTerm) {
         if (config.breakpoint === "mobile") {
-            await testController.click(this.mobileSearchButton)
+            await testController
+                .expect(this.mobileSearchButton.exists)
+                .ok("Couldn't locate the mobile search button.")
+                .click(this.mobileSearchButton)
         }
         await testController
+            .expect(this.searchInput.exists)
+            .ok("Couldn't locate the search input.")
             .typeText(this.searchInput, searchTerm)
             .expect(this.searchInput.value)
             .eql(
@@ -37,10 +42,16 @@ module.exports = class Navigation {
 
     async openMiniBag() {
         if (config.breakpoint === "desktop") {
-            await testController.click(this.desktopMiniBagIcon)
+            await testController
+                .expect(this.desktopMiniBagIcon.exists)
+                .ok("Couldn't locate the desktop mini bag icon.")
+                .click(this.desktopMiniBagIcon)
         }
         if (config.breakpoint === "mobile") {
-            await testController.click(this.mobileMiniBagIcon)
+            await testController
+                .expect(this.mobileMiniBagIcon.exists)
+                .ok("Couldn't locate the mobile mini bag icon.")
+                .click(this.mobileMiniBagIcon)
         }
     }
 }

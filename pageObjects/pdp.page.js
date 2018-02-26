@@ -25,10 +25,16 @@ module.exports = class PDP extends Base {
     }
 
     async addProductToBag() {
-        await testController.click(this.addToBagButton)
+        await testController
+            .expect(this.addToBagButton.exists)
+            .ok("The add to bag button wasn't found.")
+            .click(this.addToBagButton)
     }
 
     async dismissAddToBagConfirmationModal() {
-        await testController.click(this.addToBagConfirmationModalCloseIcon)
+        await testController
+            .expect(this.addToBagConfirmationModalCloseIcon.exists)
+            .ok("The add to bag confirmation modal close icon wasn't found.")
+            .click(this.addToBagConfirmationModalCloseIcon)
     }
 }

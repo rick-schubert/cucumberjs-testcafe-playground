@@ -57,6 +57,10 @@ module.exports = class DeliveryPage extends Base {
 
     async chooseHomeExpress() {
         await testController
+            .expect(this.homeExpressButton.exists)
+            .ok("The Home Express Button couldn't be found on the page.")
+            .expect(this.homeExpressRadioButton.exists)
+            .ok("The Home Express Radio Button couldn't be found on the page.")
             .click(this.homeExpressButton)
             .expect(this.disappearedLoadingOverlay.exists)
             .ok("The loading overlay didn't disappear in time. Sorry!")
@@ -66,43 +70,59 @@ module.exports = class DeliveryPage extends Base {
 
     async provideDeliveryDetailsManually(country) {
         await testController
+            .expect(this.manualEntryCountryDropdown.exists)
+            .ok("Couldn't find the manual entry country dropdown.")
             .click(this.manualEntryCountryDropdown)
+            .expect(this.manualEntryCountryDropdownOptions)
+            .ok("Couldn't find the manual entry country dropdown options.")
             .click(this.manualEntryCountryDropdownOptions.withText(country))
             .expect(this.manualEntryCountryDropdown.value)
             .eql(
                 country,
                 "The country option from the dropdown hasn't been selected properly."
             )
+            .expect(this.firstNameInput.exists)
+            .ok("Couldn't find the first name input.")
             .typeText(this.firstNameInput, "Testy")
             .expect(this.firstNameInput.value)
             .eql(
                 "Testy",
                 "The first name field hasn't been populated properly."
             )
+            .expect(this.lastNameInput.exists)
+            .ok("Couldn't find the last name input.")
             .typeText(this.lastNameInput, "McTest")
             .expect(this.lastNameInput.value)
             .eql(
                 "McTest",
                 "The last name field hasn't been populated properly."
             )
+            .expect(this.phoneNumberInput.exists)
+            .ok("Couldn't find the phone number input.")
             .typeText(this.phoneNumberInput, "0987654321")
             .expect(this.phoneNumberInput.value)
             .eql(
                 "0987654321",
                 "The phpone number field hasn't been populated properly."
             )
+            .expect(this.manualEntryAddressLineOneInput.exists)
+            .ok("Couldn't find the manual entry address line one input.")
             .typeText(this.manualEntryAddressLineOneInput, "Sesame Street")
             .expect(this.manualEntryAddressLineOneInput.value)
             .eql(
                 "Sesame Street",
                 "The address line 1 field hasn't been populated properly."
             )
+            .expect(this.manualEntryCityInput.exists)
+            .ok("Couldn't find the manual entry city input.")
             .typeText(this.manualEntryCityInput, "Oz")
             .expect(this.manualEntryCityInput.value)
             .eql("Oz", "The city field hasn't been populated properly.")
 
         if (country === "United States") {
             await testController
+                .expect(this.manualEntryPostCodeInput.exists)
+                .ok("Couldn't find the manual entry post code input.")
                 .typeText(this.manualEntryPostCodeInput, "90210")
                 .expect(this.manualEntryPostCodeInput.value)
                 .eql(
@@ -113,7 +133,10 @@ module.exports = class DeliveryPage extends Base {
     }
 
     async proceedToPayment() {
-        await testController.click(this.proceedToPaymentButton)
+        await testController
+            .expect(this.proceedToPaymentButton.exists)
+            .ok("Couldn't find the proceed to payment button.")
+            .click(this.proceedToPaymentButton)
         const paymentpage = new PaymentPage()
         await paymentpage.waitToBeLoaded()
     }

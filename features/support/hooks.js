@@ -38,8 +38,10 @@ function runTest(iteration) {
                 .reporter("list", stream)
                 .run({
                     skipJsErrors: true,
-                    selectorTimeout: TIMEOUT,
-                    assertionTimeout: TIMEOUT,
+                    // All these timeouts have to be smaller than the cucumber
+                    // timeout to ensure testcafe reporting
+                    selectorTimeout: TIMEOUT - 10000,
+                    assertionTimeout: TIMEOUT - 10000,
                     debugOnFail: true
                 })
                 .then(() => {
@@ -49,11 +51,9 @@ function runTest(iteration) {
                     console.log(error)
                 })
         })
-        .then(async function(report) {
-            console.log("QARS report", report)
-            // testcafe.close()
-            await testController.debug()
-        })
+        // .then(function(report) {
+        //     testcafe.close()
+        // })
 }
 
 setDefaultTimeout(TIMEOUT)
@@ -71,6 +71,7 @@ After(function() {
     fs.unlinkSync("test.js")
     // await testController.takeScreenshot()
     testControllerHolder.free()
+    testcafe.close()
 })
 
 AfterAll(function() {})

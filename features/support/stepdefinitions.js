@@ -20,7 +20,7 @@ Given("I start on a page", async (table) => {
 
 When("I search for a product code", async () => {
     const navBar = new Navigation()
-    await navBar.search("61T50MSLV")
+    await navBar.search("24R08NRED")
 })
 
 When("I add the product to the bag", async () => {

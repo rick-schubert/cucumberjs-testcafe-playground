@@ -1,5 +1,6 @@
 const browser = require("./../clienthelpers")
 const {Selector} = require("./../features/support/testcafewrappers")
+const config = require("./../config")
 const Base = require("./base.page")
 
 module.exports = class PDP extends Base {
@@ -8,7 +9,7 @@ module.exports = class PDP extends Base {
         this.pageTitle = "PDP"
         this.characteristicPageElements = [
             this.addToBagButton,
-            this.nonexistingelement
+            // this.nonexistingelement
         ]
     }
 
@@ -29,6 +30,13 @@ module.exports = class PDP extends Base {
             .expect(this.addToBagButton.exists)
             .ok("The add to bag button wasn't found.")
             .click(this.addToBagButton)
+            .expect(this.disappearedLoadingOverlay.exists)
+            .ok("Add Product to bag: Loading overlay didn't disappear.")
+        if (config.breakpoint === "mobile") {
+            await testController
+                .expect(this.addToBagConfirmationModalCloseIcon.exists)
+                .ok("The add to bag confirmation modal didn't show up after adding an item to the bag on mobile.")
+        }
     }
 
     async dismissAddToBagConfirmationModal() {

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/cucumber/bin/cucumber-js --format json:report/cucumber_report.json -f node_modules/cucumber-pretty",
-    "posttest": "echo node reporter.js"
+    "posttest": "node reporter.js"
   },
   "author": "",
   "license": "ISC",

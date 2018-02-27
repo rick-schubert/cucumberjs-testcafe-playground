@@ -44,20 +44,24 @@ module.exports = class PaymentPage extends Base {
     }
 
     get acceptTermsAndConditionsCheckboxInput() {
-        return Selector(
-            ".FormComponent-isAcceptedTermsAndConditions input"
-        )
+        return Selector(".FormComponent-isAcceptedTermsAndConditions input")
     }
 
     async enterCreditCardDetails(paymentDetails) {
         await testController
+            .expect(this.creditCardNumberInput.exists)
+            .ok("Couldn't find the credit card number input.")
             .typeText(this.creditCardNumberInput, paymentDetails["Card Number"])
             .expect(this.creditCardNumberInput.value)
             .eql(
                 paymentDetails["Card Number"],
                 "The credit card input hasn't been populated properly."
             )
+            .expect(this.creditCardExpiryMonthDropdown.exists)
+            .ok("Couldn't find the credit card expiry month dropdown.")
             .click(this.creditCardExpiryMonthDropdown)
+            .expect(this.creditCardExpiryMonthDropdownOptions.exists)
+            .ok("Couldn't find the credit card expiry month dropdown options.")
             .click(
                 this.creditCardExpiryMonthDropdownOptions.withText(
                     paymentDetails["Expiry Month"]
@@ -68,7 +72,11 @@ module.exports = class PaymentPage extends Base {
                 paymentDetails["Expiry Month"],
                 "The expiry month option from the dropdown hasn't been selected properly."
             )
+            .expect(this.creditCardExpiryYearDropdown.exists)
+            .ok("Couldn't find the credit card expiry year dropdown.")
             .click(this.creditCardExpiryYearDropdown)
+            .expect(this.creditCardExpiryYearDropdownOptions.exists)
+            .ok("Couldn't find the credit card expiry year dropdown options.")
             .click(
                 this.creditCardExpiryYearDropdownOptions.withText(
                     paymentDetails["Expiry Year"]
@@ -79,6 +87,8 @@ module.exports = class PaymentPage extends Base {
                 paymentDetails["Expiry Year"],
                 "The expiry year option from the dropdown hasn't been selected properly."
             )
+            .expect(this.creditCardCvvInput.exists)
+            .ok("Couldn't find the credit card cvv input.")
             .typeText(this.creditCardCvvInput, paymentDetails["CVV"])
             .expect(this.creditCardCvvInput.value)
             .eql(
@@ -89,7 +99,15 @@ module.exports = class PaymentPage extends Base {
 
     async acceptTermsAndConditions() {
         await testController
+            .expect(this.acceptTermsAndConditionsCheckboxSpan.exists)
+            .ok(
+                "The Accept Terms And Conditions Checkbox Span couldn't be found."
+            )
             .click(this.acceptTermsAndConditionsCheckboxSpan)
+            .expect(this.acceptTermsAndConditionsCheckboxInput.exists)
+            .ok(
+                "The Accept Terms and Conditions Checkbox Input couldn't be found."
+            )
             .expect(this.acceptTermsAndConditionsCheckboxInput.checked)
             .ok(
                 "It looks like it couldn't tick the checkbox to accept the terms and conditions."
@@ -97,6 +115,9 @@ module.exports = class PaymentPage extends Base {
     }
 
     async placeOrder() {
-        await testController.click(this.orderNowButton)
+        await testController
+            .expect(this.orderNowButton.exists)
+            .ok("The order now button wasn't found.")
+            .click(this.orderNowButton)
     }
 }

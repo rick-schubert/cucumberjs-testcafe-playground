@@ -7,6 +7,9 @@ module.exports = class MiniBag {
     }
 
     async goToCheckout() {
-        await testController.click(this.checkoutNowButton)
+        await testController
+            .expect(this.checkoutNowButton.exists)
+            .ok("Couldn't locate the checkout now button.")
+            .click(this.checkoutNowButton)
     }
 }
